@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <title>The African Languages Lab | Advancing Low-Resource African NLP</title>
   <meta name="title" content="The African Languages Lab: A Collaborative Approach to Advancing Low-Resource African NLP">
   <meta name="description" content="Introducing All Lab: A comprehensive research initiative with 19B text tokens and 12,628 hours of speech data for 40 African languages, closing the NLP gap.">
   <meta name="keywords" content="African NLP, Low-Resource Languages, Machine Translation, Speech Recognition, Multilingual AI, All Lab, ACL 2026">
   <meta name="author" content="Sheriff Issaka, Keyi Wang, Yinka Ajibola, Oluwatumininu Samuel-Ipaye, Saadia Gabriel, et al.">
   <meta name="robots" content="index, follow">
-  
+
   <meta property="og:type" content="article">
   <meta property="og:title" content="The African Languages Lab: A Collaborative Approach to Advancing Low-Resource African NLP">
   <meta property="og:description" content="Closing the gap in NLP support for African languages through systematic data collection and open collaboration.">
@@ -25,19 +25,15 @@
   <meta name="citation_publication_date" content="2025">
   <meta name="citation_conference_title" content="Annual Meeting of the Association for Computational Linguistics (ACL)">
   <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2510.05644.pdf">
-
-  <meta name="citation_conference_title" content="Annual Meeting of the Association for Computational Linguistics (ACL)">
   <meta name="citation_publication_url" content="https://aclanthology.org/2026.acl-long.1965/">
-  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2510.05644.pdf">
 
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <script type="application/ld+json">
   {
@@ -49,136 +45,291 @@
     "publisher": { "@type": "Organization", "name": "ACL 2026" }
   }
   </script>
+
+  <style>
+    :root {
+      --ink: #14172B;
+      --ink-soft: #383C58;
+      --paper: #F3F5F3;
+      --paper-alt: #FFFFFF;
+      --line: #DADDE0;
+      --gold: #E4A93A;
+      --teal: #1E7F76;
+      --indigo: #3A4CA6;
+      --muted: #6B7080;
+      --display: 'EB Garamond', Georgia, serif;
+      --body: 'Montserrat', -apple-system, sans-serif;
+      --mono: 'IBM Plex Mono', ui-monospace, monospace;
+      --max: 880px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { animation: none !important; transition: none !important; }
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+
+    /* ---------- signature triad divider ---------- */
+    .triad {
+      display: flex;
+      height: 5px;
+      width: 100%;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .triad span { flex: 1; }
+    .triad .g { background: var(--gold); }
+    .triad .t { background: var(--teal); }
+    .triad .i { background: var(--indigo); }
+    .triad.thin { height: 3px; }
+
+    /* ---------- hero ---------- */
+    .hero {
+      background:
+        radial-gradient(circle at 15% 20%, rgba(228,169,58,0.14), transparent 45%),
+        radial-gradient(circle at 85% 0%, rgba(30,127,118,0.18), transparent 50%),
+        var(--ink);
+      color: #F4F2EA;
+      padding: 76px 0 56px;
+      position: relative;
+    }
+
+    h1.hero-title {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(2.3rem, 4.8vw, 3.5rem);
+      line-height: 1.2;
+      margin: 0 0 26px;
+      letter-spacing: -0.01em;
+      max-width: 20ch;
+    }
+    h1.hero-title .accent { color: var(--gold); }
+
+    .authors {
+      font-size: 0.98rem;
+      color: #D8DAEA;
+      max-width: 70ch;
+      margin: 0 0 8px;
+    }
+    .authors sup { color: var(--gold); font-family: var(--mono); font-size: 0.65rem; }
+
+    .affils {
+      font-size: 0.86rem;
+      color: #9296B3;
+      max-width: 70ch;
+      margin: 0 0 34px;
+    }
+    .affils sup { color: var(--teal); font-family: var(--mono); font-size: 0.62rem; }
+
+    .venue-tag {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      border: 1px solid rgba(228,169,58,0.5);
+      color: var(--gold);
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 34px;
+    }
+
+    .btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 11px 20px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.16);
+      color: #F4F2EA;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+    }
+    .btn:hover { background: rgba(255,255,255,0.13); border-color: rgba(255,255,255,0.32); transform: translateY(-1px); }
+    .btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+    .btn img { height: 1em; }
+
+    /* ---------- sections ---------- */
+    section.block { padding: 64px 0; }
+    section.block + section.block { border-top: 1px solid var(--line); }
+
+    h2.section-title {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: clamp(1.7rem, 2.9vw, 2.1rem);
+      margin: 0 0 26px;
+      color: var(--ink);
+      text-align: center;
+    }
+
+    .abstract-text {
+      max-width: 70ch;
+      margin: 0 auto;
+      font-size: 1.04rem;
+      color: var(--ink-soft);
+      text-align: left;
+    }
+    .abstract-text::first-letter {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 3.6rem;
+      float: left;
+      line-height: 0.8;
+      padding: 8px 10px 0 0;
+      color: var(--indigo);
+    }
+    .abstract-text strong { color: var(--ink); font-weight: 600; }
+
+    /* ---------- poster ---------- */
+    .poster-frame {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--paper-alt);
+      box-shadow: 0 18px 40px -22px rgba(20,23,43,0.35);
+    }
+    .poster-frame img { width: 100%; height: auto; display: block; }
+    .poster-download {
+      margin-top: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--indigo);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+    .poster-download:hover { border-bottom-color: var(--indigo); }
+
+    .bib-block { position: relative; }
+    .bib-code {
+      background: var(--ink);
+      color: #D9DCF2;
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      line-height: 1.7;
+      padding: 26px 24px;
+      border-radius: 10px;
+      overflow-x: auto;
+      white-space: pre;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 14px; right: 14px;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      background: rgba(255,255,255,0.08);
+      color: #D9DCF2;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 6px;
+      padding: 6px 10px;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .copy-btn:hover { background: rgba(255,255,255,0.16); }
+
+    footer.site-footer {
+      padding: 34px 0 46px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+    footer.site-footer a { color: var(--ink-soft); text-decoration: underline; text-underline-offset: 2px; }
+
+    @media (max-width: 560px) {
+      .hero { padding: 56px 0 44px; }
+      .wrap { padding: 0 20px; }
+    }
+  </style>
 </head>
 <body>
 
 <main id="main-content">
 
-  <section class="hero is-bold" style="background: linear-gradient(135deg, #f9fbfd 0%, #f1f5f9 100%); padding-bottom: 2rem;">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            
-            <h1 class="title is-1 publication-title" style="font-weight: 800; color: #0f172a; line-height: 1.2; margin-bottom: 1.5rem;">
-              The African Languages Lab:<br>
-              <span style="color: #2563eb; font-weight: 700;">A Collaborative Approach to Advancing Low-Resource African NLP</span>
-            </h1>
-            
-            <div class="is-size-5 publication-authors" style="color: #334155; line-height: 1.6;">
-              <span class="author-block">Sheriff Issaka<sup>1</sup>,</span>
-              <span class="author-block">Keyi Wang<sup>2</sup>,</span>
-              <span class="author-block">Yinka Ajibola<sup>3</sup>,</span>
-              <span class="author-block">Oluwatumininu Samuel-Ipaye<sup>3</sup>,</span>
-              <span class="author-block">Zhaoyi Zhang<sup>3</sup>,</span>
-              <span class="author-block">Nicte Aguillon Jimenez<sup>3</sup>,</span>
-              <span class="author-block">Evans Kofi Agyei<sup>4</sup>,</span>
-              <span class="author-block">Abraham Lin<sup>5</sup>,</span>
-              <span class="author-block">Rohan Ramachandran<sup>3</sup>,</span>
-              <span class="author-block">Sadick Abdul Mumin<sup>7</sup>,</span>
-              <span class="author-block">Faith Nchifor<sup>3</sup>,</span>
-              <span class="author-block">Mohammed Shuraim<sup>6</sup>,</span>
-              <span class="author-block">Lieqi Liu<sup>1</sup>,</span>
-              <span class="author-block">Erick Rosas Gonzalez<sup>1</sup>,</span>
-              <span class="author-block">Sylvester Kpei<sup>8</sup>,</span>
-              <span class="author-block">Jemimah Osei<sup>8</sup>,</span>
-              <span class="author-block">Carlene Ajeneza<sup>3</sup>,</span>
-              <span class="author-block">Persis Boateng<sup>9</sup>,</span>
-              <span class="author-block">Prisca Adwoa Dufie Yeboah<sup>10</sup>,</span>
-              <span class="author-block">Saadia Gabriel<sup>1</sup></span>
-            </div>
+  <section class="hero">
+    <div class="wrap">
+      <h1 class="hero-title">
+        <span class="accent">The African Languages Lab: A Collaborative Approach to Advancing Low-Resource African NLP</span>
+      </h1>
 
-            <div class="is-size-6 publication-authors" style="margin-top: 15px; color: #64748b; font-style: italic;">
-              <span class="author-block"><sup>1</sup>UC Los Angeles,</span>
-              <span class="author-block"><sup>2</sup>Georgia Institute of Technology,</span>
-              <span class="author-block"><sup>3</sup>University of Wisconsin - Madison,</span>
-              <span class="author-block"><sup>4</sup>University of Cape Coast,</span>
-              <span class="author-block"><sup>5</sup>Carleton University,</span>
-              <span class="author-block"><sup>6</sup>Stetson University,</span>
-              <span class="author-block"><sup>7</sup>Northwestern University in Qatar,</span>
-              <span class="author-block"><sup>8</sup>Cornell University,</span>
-              <span class="author-block"><sup>9</sup>Soka University of America,</span>
-              <span class="author-block"><sup>10</sup>Columbia University</span>
-            </div>
+      <p class="authors">
+        Sheriff Issaka<sup>1</sup>, Keyi Wang<sup>2</sup>, Yinka Ajibola<sup>3</sup>, Oluwatumininu Samuel-Ipaye<sup>3</sup>,
+        Zhaoyi Zhang<sup>3</sup>, Nicte Aguillon Jimenez<sup>3</sup>, Evans Kofi Agyei<sup>4</sup>, Abraham Lin<sup>5</sup>,
+        Rohan Ramachandran<sup>3</sup>, Sadick Abdul Mumin<sup>7</sup>, Faith Nchifor<sup>3</sup>, Mohammed Shuraim<sup>6</sup>,
+        Lieqi Liu<sup>1</sup>, Erick Rosas Gonzalez<sup>1</sup>, Sylvester Kpei<sup>8</sup>, Jemimah Osei<sup>8</sup>,
+        Carlene Ajeneza<sup>3</sup>, Persis Boateng<sup>9</sup>, Prisca Adwoa Dufie Yeboah<sup>10</sup>, Saadia Gabriel<sup>1</sup>
+      </p>
 
-            <div class="is-size-5" style="margin-top: 20px; margin-bottom: 25px;">
-              <span class="tag is-large is-info is-light" style="font-weight: 600; font-family: 'Inter', sans-serif; letter-spacing: -0.5px;">
-                ACL 2026 (Long Paper)
-              </span>
-            </div>
+      <p class="affils">
+        <sup>1</sup>UC Los Angeles &nbsp;&middot;&nbsp; <sup>2</sup>Georgia Institute of Technology &nbsp;&middot;&nbsp;
+        <sup>3</sup>University of Wisconsin&ndash;Madison &nbsp;&middot;&nbsp; <sup>4</sup>University of Cape Coast &nbsp;&middot;&nbsp;
+        <sup>5</sup>Carleton University &nbsp;&middot;&nbsp; <sup>6</sup>Stetson University &nbsp;&middot;&nbsp;
+        <sup>7</sup>Northwestern University in Qatar &nbsp;&middot;&nbsp; <sup>8</sup>Cornell University &nbsp;&middot;&nbsp;
+        <sup>9</sup>Soka University of America &nbsp;&middot;&nbsp; <sup>10</sup>Columbia University
+      </p>
 
-            <div class="column has-text-centered">
-              <div class="buttons is-centered" style="gap: 12px;">
-                
-                <a href="#poster-section" class="button is-md is-rounded is-dark" style="box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); font-weight: 500;">
-                  <span class="icon"><i class="fas fa-file-image"></i></span>
-                  <span>Poster</span>
-                </a>
+      <div><span class="venue-tag">ACL 2026 (Long Paper)</span></div>
 
-                <a href="https://huggingface.co/datasets/African-Languages-Lab/multi-open" target="_blank" class="button is-md is-rounded is-dark" style="box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); font-weight: 500;">
-                  <span class="icon"> 
-                    <img src="static/images/hf-logo.svg" alt="Hugging Face Logo" style="height: 1em; vertical-align: middle;">
-                  </span>
-                  <span>Data</span>
-                </a>
-
-                <a href="https://aclanthology.org/2026.acl-long.1965/" target="_blank" class="button is-md is-rounded is-dark" style="box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); font-weight: 500;">
-                  <span class="icon"><i class="ai ai-acl"></i></span>
-                  <span>ACL Anthology</span>
-                </a>
-
-                <a href="https://arxiv.org/abs/2510.05644" target="_blank" class="button is-md is-rounded is-dark" style="box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); font-weight: 500;">
-                  <span class="icon"><i class="ai ai-arxiv"></i></span>
-                  <span>arXiv</span>
-                </a>
-
-              </div>
-            </div>
-
-          </div>
-        </div>
+      <div class="btn-row">
+        <a href="#poster-section" class="btn"><i class="fas fa-file-image"></i> Poster</a>
+        <a href="https://huggingface.co/datasets/African-Languages-Lab/multi-open" target="_blank" class="btn">
+          <img src="static/images/hf-logo.svg" alt=""> Data
+        </a>
+        <a href="https://aclanthology.org/2026.acl-long.1965/" target="_blank" class="btn"><i class="ai ai-acl"></i> ACL Anthology</a>
+        <a href="https://arxiv.org/abs/2510.05644" target="_blank" class="btn"><i class="ai ai-arxiv"></i> arXiv</a>
       </div>
     </div>
   </section>
 
-  <section class="section hero is-light">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
-            <p>
-              Despite representing nearly one-third of the world's languages, African languages remain critically underserved by modern NLP technologies, with 88% classified as severely underrepresented or completely ignored in computational linguistics. We present the <strong>African Languages Lab (All Lab)</strong>, a comprehensive research initiative that addresses this technological gap through systematic data collection, model development, and capacity building. Our contributions include: (1) a quality-controlled data collection pipeline, yielding the largest validated African multi-modal speech and text dataset spanning 40 languages with 19 billion tokens of monolingual text and 12,628 hours of aligned speech data; (2) extensive experimental validation demonstrating significant performance gains (+23.69 ChrF++, +15.34 BLEU). Our work demonstrates that systematic collaboration and local participation can bridge one of AI's most urgent linguistic gaps.
-            </p>
-          </div>
-        </div>
+  <section class="block">
+    <div class="wrap">
+      <h2 class="section-title">Abstract</h2>
+      <p class="abstract-text">
+        Despite representing nearly one-third of the world's languages, African languages remain critically underserved by modern NLP technologies, with 88% classified as severely underrepresented or completely ignored in computational linguistics. We present the <strong>African Languages Lab (All Lab)</strong>, a comprehensive research initiative that addresses this technological gap through systematic data collection, model development, and capacity building. Our contributions include: (1) a quality-controlled data collection pipeline, yielding the largest validated African multi-modal speech and text dataset spanning 40 languages with 19 billion tokens of monolingual text and 12,628 hours of aligned speech data; (2) extensive experimental validation demonstrating significant performance gains (+23.69 ChrF++, +15.34 BLEU). Our work demonstrates that systematic collaboration and local participation can bridge one of AI's most urgent linguistic gaps.
+      </p>
+    </div>
+  </section>
+
+  <section class="block" id="poster-section">
+    <div class="wrap">
+      <h2 class="section-title">Conference Poster</h2>
+      <div class="poster-frame">
+        <img src="static/images/All_Lab_Poster.png" alt="The African Languages Lab ACL 2026 Poster">
+      </div>
+      <div style="text-align:center;">
+        <a href="static/images/All_Lab_Poster.png" download class="poster-download">
+          <i class="fas fa-download"></i> Download Poster (Full Resolution)
+        </a>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3" id="poster-section">Conference Poster</h2>
-          <div class="publication-poster" style="margin-top: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden;">
-            <img src="static/images/All_Lab_Poster.png" alt="The African Languages Lab ACL 2026 Poster" style="width: 100%; height: auto; display: block;">
-          </div>
-          <div style="margin-top: 15px;">
-            <a href="static/images/All_Lab_Poster.png" download class="button is-outlined is-link is-small">
-              <span class="icon"><i class="fas fa-download"></i></span>
-              <span>Download Poster (Full Resolution)</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre id="bibtex-code" style="background: #f5f5f5; padding: 20px; border-radius: 10px;"><code>@inproceedings{issaka-etal-2026-african,
+  <section class="block" id="BibTeX">
+    <div class="wrap">
+      <h2 class="section-title" style="text-align:left;">BibTeX</h2>
+      <div class="bib-block">
+        <button class="copy-btn" onclick="copyBib()">COPY</button>
+        <pre class="bib-code" id="bibtex-code"><code>@inproceedings{issaka-etal-2026-african,
     title = "The African Languages Lab: A Collaborative Approach to Advancing Low-Resource African {NLP}",
     author = "Issaka, Sheriff and Wang, Keyi and Ajibola, Yinka and Samuel-Ipaye, Oluwatumininu and Zhang, Zhaoyi and Jimenez, Nicte Aguillon and Agyei, Evans Kofi and Lin, Abraham and Ramachandran, Rohan and Mumin, Sadick Abdul and Nchifor, Faith and Shuraim, Mohammed and Liu, Lieqi and Gonzalez, Erick Rosas and Kpei, Sylvester and Osei, Jemimah and Ajeneza, Carlene and Boateng, Persis and Yeboah, Prisca Adwoa Dufie and Gabriel, Saadia",
     booktitle = "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
@@ -187,22 +338,29 @@
     publisher = "Association for Computational Linguistics",
     url = "https://aclanthology.org/2026.acl-long.1965/",
 }</code></pre>
+      </div>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="content has-text-centered">
-        <p>
-          This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-        </p>
-      </div>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="triad thin" style="max-width:180px; margin:0 auto 22px;"><span class="g"></span><span class="t"></span><span class="i"></span></div>
+      <p>This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
     </div>
   </footer>
 
 </main>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="static/js/index.js"></script>
+<script>
+  function copyBib() {
+    const text = document.getElementById('bibtex-code').innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.querySelector('.copy-btn');
+      const original = btn.textContent;
+      btn.textContent = 'COPIED';
+      setTimeout(() => { btn.textContent = original; }, 1500);
+    });
+  }
+</script>
 </body>
 </html>
